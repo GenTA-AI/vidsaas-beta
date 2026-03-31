@@ -169,7 +169,7 @@ export default function ImageGenerator({
               className={`w-full text-left px-3 py-2.5 rounded-lg transition flex items-start gap-3 cursor-grab active:cursor-grabbing ${
                 draggedId === scene.id ? "opacity-40" :
                 selectedId === scene.id
-                  ? "bg-[#667eea]/20 border border-[#667eea]/30"
+                  ? "bg-[#5B7FFF]/20 border border-[#5B7FFF]/30"
                   : "hover:bg-white/5 border border-transparent"
               }`}
             >
@@ -257,7 +257,7 @@ export default function ImageGenerator({
                 onClick={() => setMode("image")}
                 className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium transition ${
                   mode === "image"
-                    ? "text-[#667eea] border-b-2 border-[#667eea]"
+                    ? "text-[#5B7FFF] border-b-2 border-[#5B7FFF]"
                     : "text-white/30 hover:text-white/50"
                 }`}
               >
@@ -294,7 +294,7 @@ export default function ImageGenerator({
                   onChange={(e) => setUserRequest(e.target.value)}
                   rows={3}
                   placeholder="예: 좀 더 따뜻한 조명으로, 제품을 클로즈업해서 보여줘"
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#667eea] resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#5B7FFF] resize-none"
                 />
                 {userRequest.trim() && (
                   <button
@@ -304,7 +304,7 @@ export default function ImageGenerator({
                       onRefresh();
                     })}
                     disabled={loading !== null}
-                    className="mt-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#667eea]/20 hover:bg-[#667eea]/30 disabled:opacity-30 text-[#667eea] text-xs font-medium transition"
+                    className="mt-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#5B7FFF]/20 hover:bg-[#5B7FFF]/30 disabled:opacity-30 text-[#5B7FFF] text-xs font-medium transition"
                   >
                     {loading === "gen-prompt" ? <Loader2 className="w-3 h-3 animate-spin" /> : <Sparkles className="w-3 h-3" />}
                     AI가 프롬프트 작성
@@ -340,14 +340,14 @@ export default function ImageGenerator({
                     onClick={() => toggleRef(ref.url)}
                     className={`relative w-14 h-14 rounded-lg border-2 overflow-hidden transition ${
                       selectedRefs.includes(ref.url)
-                        ? "border-[#667eea] ring-1 ring-[#667eea]/50"
+                        ? "border-[#5B7FFF] ring-1 ring-[#5B7FFF]/50"
                         : "border-white/10 hover:border-white/30"
                     }`}
                     title={ref.label}
                   >
                     <img src={assetUrl(ref.url)} alt={ref.label} className="w-full h-full object-cover" />
                     {selectedRefs.includes(ref.url) && (
-                      <div className="absolute inset-0 bg-[#667eea]/30 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-[#5B7FFF]/30 flex items-center justify-center">
                         <Check className="w-4 h-4 text-white" />
                       </div>
                     )}
@@ -363,7 +363,7 @@ export default function ImageGenerator({
                 </label>
               </div>
               {selectedRefs.length > 0 && (
-                <p className="text-[10px] text-[#667eea]/60 mt-1">{selectedRefs.length}개 레퍼런스 선택됨</p>
+                <p className="text-[10px] text-[#5B7FFF]/60 mt-1">{selectedRefs.length}개 레퍼런스 선택됨</p>
               )}
             </div>
 
@@ -454,7 +454,7 @@ export default function ImageGenerator({
         <div className="flex-1 flex items-center justify-center p-5 pt-0">
           {selected?.status.includes("generating") ? (
             <div className="text-center">
-              <Loader2 className="w-10 h-10 animate-spin text-[#667eea] mx-auto mb-3" />
+              <Loader2 className="w-10 h-10 animate-spin text-[#5B7FFF] mx-auto mb-3" />
               <p className="text-sm text-white/50">
                 {selected.status === "generating_image" ? "이미지 생성 중..." : "영상 생성 중..."}
               </p>
@@ -555,7 +555,7 @@ export default function ImageGenerator({
           <button
             onClick={() => withLoading("batch-img", () => api.approveScenes(projectId))}
             disabled={loading !== null}
-            className="w-full flex items-center justify-center gap-2 bg-[#667eea]/10 hover:bg-[#667eea]/20 border border-[#667eea]/20 disabled:opacity-30 text-[#667eea] px-4 py-2 rounded-lg text-sm font-medium transition"
+            className="w-full flex items-center justify-center gap-2 bg-[#5B7FFF]/10 hover:bg-[#5B7FFF]/20 border border-[#5B7FFF]/20 disabled:opacity-30 text-[#5B7FFF] px-4 py-2 rounded-lg text-sm font-medium transition"
           >
             {loading === "batch-img" ? <Loader2 className="w-4 h-4 animate-spin" /> : <ImageIcon className="w-4 h-4" />}
             전체 이미지 생성

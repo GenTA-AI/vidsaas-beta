@@ -71,13 +71,13 @@ export default function ReferenceLibrary({ projectId }: ReferenceLibraryProps) {
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <ImageIcon className="w-4 h-4 text-[#667eea]" />
+          <ImageIcon className="w-4 h-4 text-[#5B7FFF]" />
           <h3 className="text-sm font-semibold text-white">레퍼런스 라이브러리</h3>
           <span className="text-xs text-white/30">{refs.length}개</span>
         </div>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#667eea]/20 hover:bg-[#667eea]/30 text-[#667eea] text-xs font-medium transition"
+          className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#5B7FFF]/20 hover:bg-[#5B7FFF]/30 text-[#5B7FFF] text-xs font-medium transition"
         >
           <Plus className="w-3 h-3" />
           생성
@@ -97,7 +97,7 @@ export default function ReferenceLibrary({ projectId }: ReferenceLibraryProps) {
                   onClick={() => setCategory(cat.id)}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
                     category === cat.id
-                      ? "bg-[#667eea] text-white"
+                      ? "bg-[#5B7FFF] text-white"
                       : "bg-white/5 text-white/50 hover:text-white"
                   }`}
                 >
@@ -112,7 +112,7 @@ export default function ReferenceLibrary({ projectId }: ReferenceLibraryProps) {
             value={label}
             onChange={(e) => setLabel(e.target.value)}
             placeholder="이름 (예: 주인공, 도시 배경, 제품 클로즈업)"
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#667eea]"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#5B7FFF]"
           />
           {/* Prompt */}
           <textarea
@@ -120,7 +120,7 @@ export default function ReferenceLibrary({ projectId }: ReferenceLibraryProps) {
             onChange={(e) => setPrompt(e.target.value)}
             rows={2}
             placeholder="이미지 프롬프트 (영어): A young Korean woman, 25 years old, modern style..."
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#667eea] resize-none font-mono"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#5B7FFF] resize-none font-mono"
           />
           <button
             onClick={handleCreate}

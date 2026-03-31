@@ -28,10 +28,10 @@ export default function Sidebar({
   onBack,
 }: SidebarProps) {
   return (
-    <aside className="w-64 h-full flex flex-col bg-[rgba(18,18,18,0.8)] backdrop-blur-xl border-r border-white/10">
+    <aside className="w-64 h-full flex flex-col glass backdrop-blur-xl border-r border-white/10">
       {/* Logo */}
       <div className="flex items-center gap-3 px-5 py-5">
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#667eea] to-[#764ba2] flex items-center justify-center text-white font-bold text-sm">
+        <div className="w-8 h-8 rounded-lg bg-[#5B7FFF] flex items-center justify-center text-white font-bold text-sm">
           G
         </div>
         <span className="text-white font-semibold text-lg tracking-tight">
@@ -65,7 +65,7 @@ export default function Sidebar({
                   w-full text-left px-3 py-2 rounded-lg text-sm transition-colors
                   ${
                     isActive
-                      ? "bg-[#667eea]/20 text-white border-l-2 border-[#667eea]"
+                      ? "bg-[#5B7FFF]/20 text-white border-l-2 border-[#5B7FFF]"
                       : "text-white/60 hover:text-white hover:bg-white/5 border-l-2 border-transparent"
                   }
                 `}

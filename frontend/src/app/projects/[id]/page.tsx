@@ -163,7 +163,7 @@ export default function ProjectPage({
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#667eea]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#5B7FFF]" />
       </div>
     );
   }
@@ -190,7 +190,7 @@ export default function ProjectPage({
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-h-screen overflow-hidden">
         {/* Header */}
-        <header className="h-14 border-b border-white/10 bg-[rgba(18,18,18,0.8)] backdrop-blur-xl flex items-center px-6 justify-between">
+        <header className="h-14 border-b border-white/10 glass backdrop-blur-xl flex items-center px-6 justify-between">
           <div className="flex items-center gap-3">
             <h2 className="text-white font-semibold">
               {currentStage === "idea" && "💡 아이디어 탐색"}
@@ -206,7 +206,7 @@ export default function ProjectPage({
           <div className="flex items-center gap-2">
             <button
               onClick={() => setShowVersions(!showVersions)}
-              className={`text-xs px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 ${showVersions ? "bg-[#667eea]/20 text-[#667eea]" : "text-white/40 bg-white/5 hover:bg-white/10"}`}
+              className={`text-xs px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 ${showVersions ? "bg-[#5B7FFF]/20 text-[#5B7FFF]" : "text-white/40 bg-white/5 hover:bg-white/10"}`}
             >
               <History className="w-3.5 h-3.5" />
               버전

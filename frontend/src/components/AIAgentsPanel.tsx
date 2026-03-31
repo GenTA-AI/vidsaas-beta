@@ -21,7 +21,7 @@ export default function AIAgentsPanel({
   onAgentClick,
 }: AIAgentsPanelProps) {
   return (
-    <div className="rounded-xl bg-[rgba(18,18,18,0.5)] backdrop-blur border border-white/10 p-4 flex flex-col gap-4">
+    <div className="rounded-xl glass backdrop-blur border border-white/10 p-4 flex flex-col gap-4">
       {/* Title */}
       <h3 className="text-white font-semibold text-sm">AI 에이전트</h3>
 

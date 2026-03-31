@@ -19,7 +19,7 @@ const STATUS_LABELS: Record<string, string> = {
 
 const STATUS_COLORS: Record<string, string> = {
   draft: "bg-white/20",
-  planning: "bg-[#667eea]/60",
+  planning: "bg-[#5B7FFF]/60",
   scenes_review: "bg-blue-500/60",
   image_generating: "bg-yellow-500/60",
   images_review: "bg-blue-500/60",
@@ -90,7 +90,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
       {/* Hero */}
-      <header className="border-b border-white/10 bg-[rgba(18,18,18,0.8)] backdrop-blur-xl">
+      <header className="border-b border-white/10 glass backdrop-blur-xl">
         <div className="max-w-5xl mx-auto px-8 py-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-lg gradient-primary flex items-center justify-center text-white font-bold text-lg">
@@ -127,14 +127,14 @@ export default function HomePage() {
                 <button
                   type="button"
                   onClick={() => setCreateMode("brief")}
-                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition ${createMode === "brief" ? "bg-[#667eea] text-white" : "text-white/40 hover:text-white/60"}`}
+                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition ${createMode === "brief" ? "bg-[#5B7FFF] text-white" : "text-white/40 hover:text-white/60"}`}
                 >
                   브리프로 시작
                 </button>
                 <button
                   type="button"
                   onClick={() => setCreateMode("synopsis")}
-                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition ${createMode === "synopsis" ? "bg-[#667eea] text-white" : "text-white/40 hover:text-white/60"}`}
+                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition ${createMode === "synopsis" ? "bg-[#5B7FFF] text-white" : "text-white/40 hover:text-white/60"}`}
                 >
                   시놉시스 파일로 시작
                 </button>
@@ -150,7 +150,7 @@ export default function HomePage() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="예: Galaxy S26 런칭 영상"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#667eea]"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#5B7FFF]"
                 />
               </div>
 
@@ -164,7 +164,7 @@ export default function HomePage() {
                     onChange={(e) => setBrief(e.target.value)}
                     rows={4}
                     placeholder="예: Galaxy S26의 혁신적인 AI 카메라 기능을 강조하는 15초 SNS 광고 영상."
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#667eea] resize-none"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#5B7FFF] resize-none"
                   />
                 </div>
               ) : (
@@ -189,7 +189,7 @@ export default function HomePage() {
                     onChange={(e) => setSynopsisText(e.target.value)}
                     rows={8}
                     placeholder={"시놉시스나 기획서 내용을 붙여넣기 하거나 파일을 선택하세요.\n\n예:\n오프닝: 블루 톤 배경에 제품 등장 (3초)\n메인: 제품 기능 시연, 사용자 리액션 (7초)\n클로징: 로고 + CTA (5초)"}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#667eea] resize-none font-mono"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#5B7FFF] resize-none font-mono"
                   />
                   <p className="text-xs text-white/30 mt-2">
                     AI가 내용을 분석해서 자동으로 씬 분할, 대본, 이미지 프롬프트를 생성합니다.

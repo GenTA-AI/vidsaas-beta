@@ -127,14 +127,14 @@ export default function ChatWorkspace({ projectId, onFinalized, onRefresh }: Cha
       {/* Header */}
       <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
         <div className="flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-[#667eea]" />
+          <Sparkles className="h-5 w-5 text-[#5B7FFF]" />
           <h2 className="text-lg font-semibold text-white">AI 기획 채팅</h2>
           <span className="text-xs text-white/30">상담 & 수정 요청</span>
         </div>
         <button
           onClick={handleFinalize}
           disabled={finalizing || messages.length === 0}
-          className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#667eea] to-[#764ba2] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex items-center gap-2 rounded-lg bg-[#5B7FFF] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {finalizing && <Loader2 className="h-4 w-4 animate-spin" />}
           기획 확정
@@ -159,11 +159,11 @@ export default function ChatWorkspace({ projectId, onFinalized, onRefresh }: Cha
             return (
               <div key={msg.id} className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
                 <div className={`max-w-[75%] ${!isUser ? "space-y-1" : ""}`}>
-                  {!isUser && <span className="text-xs font-medium text-[#667eea]">Claude</span>}
+                  {!isUser && <span className="text-xs font-medium text-[#5B7FFF]">Claude</span>}
                   <div
                     className={`whitespace-pre-wrap rounded-2xl px-4 py-3 text-sm leading-relaxed ${
                       isUser
-                        ? "rounded-br-md bg-[#667eea] text-white"
+                        ? "rounded-br-md bg-[#5B7FFF] text-white"
                         : "rounded-bl-md bg-white/10 text-white/90"
                     }`}
                   >
@@ -177,9 +177,9 @@ export default function ChatWorkspace({ projectId, onFinalized, onRefresh }: Cha
 
         {/* Pending Proposal Card */}
         {pendingProposal && (
-          <div className="mx-auto max-w-[85%] rounded-xl border border-[#667eea]/30 bg-[#667eea]/5 p-5 animate-fadeInUp">
+          <div className="mx-auto max-w-[85%] rounded-xl border border-[#5B7FFF]/30 bg-[#5B7FFF]/5 p-5 animate-fadeInUp">
             <div className="flex items-center gap-2 mb-3">
-              <ArrowRight className="w-4 h-4 text-[#667eea]" />
+              <ArrowRight className="w-4 h-4 text-[#5B7FFF]" />
               <h4 className="text-sm font-semibold text-white">변경사항 제안</h4>
             </div>
             <p className="text-sm text-white/70 mb-3">{pendingProposal.summary}</p>
@@ -191,7 +191,7 @@ export default function ChatWorkspace({ projectId, onFinalized, onRefresh }: Cha
                     <span className="text-white/40">
                       {change.target === "scene" ? `씬 ${(change.scene_index ?? 0) + 1}` : "프로젝트"}
                     </span>
-                    <span className="text-[#667eea] font-medium">{change.field}</span>
+                    <span className="text-[#5B7FFF] font-medium">{change.field}</span>
                   </div>
                   {change.before && (
                     <div className="text-red-400/70 line-through mb-1 truncate">
@@ -228,7 +228,7 @@ export default function ChatWorkspace({ projectId, onFinalized, onRefresh }: Cha
         {sending && (
           <div className="flex justify-start">
             <div className="rounded-2xl rounded-bl-md bg-white/10 px-4 py-3">
-              <Loader2 className="h-4 w-4 animate-spin text-[#667eea]" />
+              <Loader2 className="h-4 w-4 animate-spin text-[#5B7FFF]" />
             </div>
           </div>
         )}
@@ -245,12 +245,12 @@ export default function ChatWorkspace({ projectId, onFinalized, onRefresh }: Cha
             onKeyDown={handleKeyDown}
             placeholder="기획 상담, 수정 요청 등 자유롭게 입력하세요..."
             rows={1}
-            className="flex-1 resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors focus:border-[#667eea]/50"
+            className="flex-1 resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors focus:border-[#5B7FFF]/50"
           />
           <button
             onClick={handleSend}
             disabled={!input.trim() || sending}
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#5B7FFF] text-white transition-opacity hover:opacity-90 disabled:opacity-50"
           >
             {sending ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
           </button>

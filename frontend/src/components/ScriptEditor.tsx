@@ -112,7 +112,7 @@ export default function ScriptEditor({
                 }
                 rows={3}
                 placeholder="예: 카페에서 주인공이 노트북을 열고 제품을 처음 사용하는 장면. 놀라는 표정. 따뜻한 조명."
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white leading-relaxed focus:outline-none focus:ring-1 focus:ring-[#667eea] placeholder:text-white/20 resize-none"
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white leading-relaxed focus:outline-none focus:ring-1 focus:ring-[#5B7FFF] placeholder:text-white/20 resize-none"
               />
               <div className="flex justify-end mt-2">
                 <button

@@ -63,7 +63,7 @@ export default function HarnessPanel({ projectId, harnessJson, onUpdated }: Harn
         className="w-full flex items-center justify-between"
       >
         <div className="flex items-center gap-2">
-          <Settings className="w-4 h-4 text-[#667eea]" />
+          <Settings className="w-4 h-4 text-[#5B7FFF]" />
           <h3 className="text-sm font-semibold text-white">하네스 지침</h3>
           {isEmpty && <span className="text-[10px] text-yellow-400/60 bg-yellow-400/10 px-1.5 py-0.5 rounded">미설정</span>}
         </div>
@@ -86,7 +86,7 @@ export default function HarnessPanel({ projectId, harnessJson, onUpdated }: Harn
               <span className="text-[10px] text-white/30 w-16 shrink-0">키워드</span>
               <div className="flex gap-1 flex-wrap">
                 {harness.brand_keywords.map((kw, i) => (
-                  <span key={i} className="text-[10px] bg-[#667eea]/10 text-[#667eea] px-1.5 py-0.5 rounded">{kw}</span>
+                  <span key={i} className="text-[10px] bg-[#5B7FFF]/10 text-[#5B7FFF] px-1.5 py-0.5 rounded">{kw}</span>
                 ))}
               </div>
             </div>
@@ -100,13 +100,13 @@ export default function HarnessPanel({ projectId, harnessJson, onUpdated }: Harn
                 onChange={(e) => setChatInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleChatUpdate()}
                 placeholder="하네스 수정 요청..."
-                className="flex-1 bg-white/5 border border-white/10 rounded-lg px-2.5 py-1.5 text-[11px] text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#667eea]"
+                className="flex-1 bg-white/5 border border-white/10 rounded-lg px-2.5 py-1.5 text-[11px] text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#5B7FFF]"
                 disabled={chatting}
               />
               <button
                 onClick={handleChatUpdate}
                 disabled={chatting || !chatInput.trim()}
-                className="p-1.5 rounded-lg bg-[#667eea]/20 hover:bg-[#667eea]/30 disabled:opacity-20 text-[#667eea] transition"
+                className="p-1.5 rounded-lg bg-[#5B7FFF]/20 hover:bg-[#5B7FFF]/30 disabled:opacity-20 text-[#5B7FFF] transition"
               >
                 {chatting ? <Loader2 className="w-3 h-3 animate-spin" /> : <Send className="w-3 h-3" />}
               </button>

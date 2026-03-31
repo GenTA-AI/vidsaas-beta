@@ -187,7 +187,7 @@ export default function PostProductionEditor({ projectId, scenes, onRefresh }: P
                 <div className="flex items-center gap-3 py-2 px-4">
                   <div className="flex-1 h-px bg-white/10" />
                   <select value={scene.transition} onChange={(e) => handleTransition(scene.id, e.target.value)}
-                    className="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white/60 focus:outline-none focus:ring-1 focus:ring-[#667eea]">
+                    className="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white/60 focus:outline-none focus:ring-1 focus:ring-[#5B7FFF]">
                     {TRANSITIONS.map((t) => <option key={t.id} value={t.id} className="bg-[#141414]">{t.label} — {t.desc}</option>)}
                   </select>
                   <div className="flex-1 h-px bg-white/10" />
@@ -221,7 +221,7 @@ export default function PostProductionEditor({ projectId, scenes, onRefresh }: P
                         type="range" min={0} max={scene.duration_sec} step={0.1}
                         value={previewTime[scene.id] ?? 0}
                         onChange={(e) => setPreviewTime((p) => ({ ...p, [scene.id]: parseFloat(e.target.value) }))}
-                        className="w-full h-1 accent-[#667eea] cursor-pointer"
+                        className="w-full h-1 accent-[#5B7FFF] cursor-pointer"
                       />
                       <div className="flex justify-between text-[10px] text-white/20">
                         <span>{(previewTime[scene.id] ?? 0).toFixed(1)}s</span>
@@ -235,7 +235,7 @@ export default function PostProductionEditor({ projectId, scenes, onRefresh }: P
                       {subs.map((sub, i) => (
                         <div
                           key={i}
-                          className="absolute top-0 h-full rounded bg-[#667eea]/40 border border-[#667eea]/60"
+                          className="absolute top-0 h-full rounded bg-[#5B7FFF]/40 border border-[#5B7FFF]/60"
                           style={{
                             left: `${(sub.start / scene.duration_sec) * 100}%`,
                             width: `${((sub.end - sub.start) / scene.duration_sec) * 100}%`,
@@ -258,9 +258,9 @@ export default function PostProductionEditor({ projectId, scenes, onRefresh }: P
                     <div className="flex items-center justify-between">
                       <h3 className="text-sm font-semibold text-white">{scene.title}</h3>
                       <div className="flex items-center gap-2">
-                        {saving === scene.id && <Loader2 className="w-3 h-3 animate-spin text-[#667eea]" />}
+                        {saving === scene.id && <Loader2 className="w-3 h-3 animate-spin text-[#5B7FFF]" />}
                         <button onClick={() => saveSubs(scene.id)} disabled={saving !== null}
-                          className="px-2.5 py-1 rounded-lg bg-[#667eea]/20 hover:bg-[#667eea]/30 disabled:opacity-20 text-[#667eea] text-xs font-medium transition">
+                          className="px-2.5 py-1 rounded-lg bg-[#5B7FFF]/20 hover:bg-[#5B7FFF]/30 disabled:opacity-20 text-[#5B7FFF] text-xs font-medium transition">
                           저장
                         </button>
                       </div>
@@ -274,7 +274,7 @@ export default function PostProductionEditor({ projectId, scenes, onRefresh }: P
                             onChange={(e) => updateSub(scene.id, i, "text", e.target.value)}
                             placeholder="자막 텍스트... (Enter로 줄바꿈)"
                             rows={2}
-                            className="w-full bg-white/5 border border-white/10 rounded px-2.5 py-1.5 text-sm text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#667eea] resize-none"
+                            className="w-full bg-white/5 border border-white/10 rounded px-2.5 py-1.5 text-sm text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#5B7FFF] resize-none"
                           />
                           <div className="flex gap-2 items-center">
                             <label className="text-[10px] text-white/30">시작</label>
@@ -297,7 +297,7 @@ export default function PostProductionEditor({ projectId, scenes, onRefresh }: P
                                 type="range" min={16} max={80} step={2}
                                 value={sub.size || 42}
                                 onChange={(e) => updateSub(scene.id, i, "size", parseInt(e.target.value))}
-                                className="flex-1 h-1 accent-[#667eea] cursor-pointer"
+                                className="flex-1 h-1 accent-[#5B7FFF] cursor-pointer"
                               />
                               <span className="text-[10px] text-white/40 w-8">{sub.size || 42}px</span>
                             </div>
@@ -308,7 +308,7 @@ export default function PostProductionEditor({ projectId, scenes, onRefresh }: P
                                   onClick={() => updateSub(scene.id, i, "position", pos)}
                                   className={`px-1.5 py-0.5 rounded text-[9px] transition ${
                                     (sub.position || "center") === pos
-                                      ? "bg-[#667eea] text-white"
+                                      ? "bg-[#5B7FFF] text-white"
                                       : "bg-white/5 text-white/30 hover:text-white/50"
                                   }`}
                                 >

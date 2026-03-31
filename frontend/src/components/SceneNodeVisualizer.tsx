@@ -86,7 +86,7 @@ export default function SceneNodeVisualizer({ scenes, onSceneClick }: SceneNodeV
                   className="w-48 flex flex-col items-center gap-2 rounded-xl bg-[rgba(24,24,28,0.7)] backdrop-blur-xl border border-white/10 p-4 hover:border-white/25 hover:bg-[rgba(30,30,36,0.8)] transition-all cursor-pointer group"
                 >
                   {/* Scene number circle */}
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#667eea] to-[#764ba2] flex items-center justify-center text-white text-xs font-bold shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#5B7FFF] flex items-center justify-center text-white text-xs font-bold shrink-0">
                     {scene.order_index + 1}
                   </div>
 
@@ -122,7 +122,7 @@ export default function SceneNodeVisualizer({ scenes, onSceneClick }: SceneNodeV
 
                 {/* Connecting line/arrow */}
                 {idx < sorted.length - 1 && (
-                  <div className="w-10 h-0.5 bg-gradient-to-r from-[#667eea]/60 to-[#764ba2]/60 shrink-0" />
+                  <div className="w-10 h-0.5 bg-[#5B7FFF]/40 shrink-0" />
                 )}
               </div>
             );

@@ -80,12 +80,12 @@ export default function VersionPanel({ projectId, onRestored }: VersionPanelProp
     <div className="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 p-4">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <History className="w-4 h-4 text-[#667eea]" />
+          <History className="w-4 h-4 text-[#5B7FFF]" />
           <h3 className="text-sm font-semibold text-white">버전 관리</h3>
         </div>
         <button
           onClick={() => setShowSave(!showSave)}
-          className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#667eea]/20 hover:bg-[#667eea]/30 text-[#667eea] text-xs font-medium transition"
+          className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#5B7FFF]/20 hover:bg-[#5B7FFF]/30 text-[#5B7FFF] text-xs font-medium transition"
         >
           <Plus className="w-3 h-3" />
           저장
@@ -99,7 +99,7 @@ export default function VersionPanel({ projectId, onRestored }: VersionPanelProp
             value={label}
             onChange={(e) => setLabel(e.target.value)}
             placeholder="버전 이름 (예: 시나리오 초안)"
-            className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#667eea]"
+            className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-[#5B7FFF]"
             onKeyDown={(e) => e.key === "Enter" && handleSave()}
           />
           <button
@@ -134,7 +134,7 @@ export default function VersionPanel({ projectId, onRestored }: VersionPanelProp
                 <button
                   onClick={() => handleRestore(v.id, v.label)}
                   disabled={restoring !== null}
-                  className="p-1.5 rounded bg-[#667eea]/20 hover:bg-[#667eea]/40 text-[#667eea] transition"
+                  className="p-1.5 rounded bg-[#5B7FFF]/20 hover:bg-[#5B7FFF]/40 text-[#5B7FFF] transition"
                   title="이 버전으로 복원"
                 >
                   {restoring === v.id ? (
